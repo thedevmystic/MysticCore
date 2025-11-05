@@ -1,0 +1,240 @@
+/**
+ * Copyright 2025 Suryansh Singh
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * ------------------------------------------------------------------------------------------------------
+ *
+ * @path [ROOT]/include/mystic/types/internal/byte_internal.hpp
+ * @file byte_internal.hpp
+ * @brief Defines byte struct for pre-C++17.
+ *
+ * @details
+ * This header defines byte for pre-C++17. It is intended for internal usage only.
+ * It will be public if compiler is pre-C++17 via, types/standard_defs.hpp.
+ *
+ * @author TheDevMystic (Surya)
+ * @copyright 2025 Suryansh Singh Apache-2.0 License
+ *
+ * SPDX-FileCopyrightText: 2025 Suryansh Singh
+ * SPDX-License-Identifier: Apache-2.0
+ */
+#pragma once
+
+#include <type_traits>
+
+#include "mystic/assert/assert.hpp"
+#include "mystic/architecture/forceinline.hpp"
+
+/**
+ * @namespace mystic::types::internal
+ * @ingroup Types
+ * @brief Internal types definitions
+ *
+ * This namespace contains all internal type definitions.
+ * **This namespace should not be directly used.** It is for internal
+ * usage only. Use mystic::types instead.
+ */
+namespace mystic::types::internal {
+
+// --- Class Def ---
+
+/**
+ * @enum byte
+ * @brief Internal byte struct for pre-C++17.
+ */
+enum class byte : unsigned char {};
+
+// --- Conversion Operators ---
+
+/**
+ * @brief Function for conversion of byte to integer.
+ *
+ * @tparam T The integral type.
+ *
+ * @param byte The byte enum to be converted.
+ *
+ * @returns Integer version of byte.
+ */
+template <typename T = unsigned int,
+          typename = ::std::enable_if<
+              std::is_integral<T>::value
+          >::type>
+constexpr MYSTIC_FORCEINLINE T ConvertToInteger(const byte& byte) noexcept {
+    return static_cast<T>(byte);
+}
+
+/**
+ * @brief Function for conversion of integer to byte.
+ *
+ * @tparam T Integral type.
+ * @param value The integral to be converted.
+ *
+ * @returns Byte.
+ */
+template <typename T = unsigned int,
+          typename = ::std::enable_if<
+              std::is_integral<T>::value
+          >::type>
+constexpr MYSTIC_FORCEINLINE byte ConvertToByte(const T& value) noexcept {
+    MYSTIC_DASSERT(value >= 0 && value <= 255, "The given variable value exceeds the range of byte.")
+    return static_cast<byte>(value);
+}
+
+// --- Bitwise Binary Operators ---
+
+/**
+ * @brief Bitwise AND operator.
+ *
+ * @param LHS The left handside byte.
+ * @param RHS The right handside byte.
+ *
+ * @returns Byte after bitwise AND operation.
+ */
+constexpr MYSTIC_FORCEINLINE byte operator&(const byte& lhs, const byte& rhs) noexcept {
+    return static_cast<byte>(ConvertToInteger(lhs) & ConvertToInteger(rhs));
+}
+
+/**
+ * @brief Bitwise OR operator.
+ *
+ * @param LHS The left handside byte.
+ * @param RHS The right handside byte.
+ *
+ * @returns Byte after bitwise OR operation.
+ */
+constexpr MYSTIC_FORCEINLINE byte operator|(const byte& lhs, const byte& rhs) noexcept {
+    return static_cast<byte>(ConvertToInteger(lhs) | ConvertToInteger(rhs));
+}
+
+/**
+ * @brief Bitwise XOR operator.
+ *
+ * @param LHS The left handside byte.
+ * @param RHS The right handside byte.
+ *
+ * @returns Byte after bitwise XOR operation.
+ */
+constexpr MYSTIC_FORCEINLINE byte operator^(const byte& lhs, const byte& rhs) noexcept {
+    return static_cast<byte>(ConvertToInteger(lhs) ^ ConvertToInteger(rhs));
+}
+
+
+// --- Bitwise Unary Operators ---
+
+/**
+ * @brief Bitwise NOT operator.
+ *
+ * @param byte The byte value.
+ *
+ * @returns Byte after bitwise NOT operation.
+ */
+constexpr MYSTIC_FORCEINLINE byte operator~(const byte& byte) noexcept {
+    return static_cast<byte>(~ConvertToInteger(byte));
+}
+
+
+// --- Bitwise Shift Operators ---
+
+/**
+ * @brief Bitwise left shift operator.
+ *
+ * @param byte The byte value.
+ * @param shift The required shift.
+ *
+ * @returns Byte after bitwise left shift operation.
+ */
+constexpr MYSTIC_FORCEINLINE byte operator<<(const byte& byte, int shift) noexcept {
+    return static_cast<byte>(ConvertToInteger(byte) << shift);
+}
+
+/**
+ * @brief Bitwise right shift operator.
+ *
+ * @param byte The byte value.
+ * @param shift The required shift.
+ *
+ * @returns Byte after bitwise right shift operation.
+ */
+constexpr MYSTIC_FORCEINLINE byte operator>>(const byte& byte, int shift) noexcept {
+    return static_cast<byte>(ConvertToInteger(byte) >> shift);
+}
+
+
+// --- Compound Assignment Bitwise Operators ---
+
+/**
+ * @brief Bitwise AND assignment operator.
+ *
+ * @param LHS The left handside byte.
+ * @param RHS The right handside byte.
+ *
+ * @returns Reference to LHS after bitwise AND assignment operation.
+ */
+constexpr MYSTIC_FORCEINLINE byte& operator&=(byte& lhs, const byte& rhs) noexcept {
+    lhs = lhs & rhs;
+    return lhs;
+}
+
+/**
+ * @brief Bitwise OR assignment operator.
+ *
+ * @param LHS The left handside byte.
+ * @param RHS The right handside byte.
+ *
+ * @returns Reference to LHS after bitwise OR assignment operation.
+ */
+constexpr MYSTIC_FORCEINLINE byte& operator|=(byte& lhs, const byte& rhs) noexcept {
+    lhs = lhs | rhs;
+    return lhs;
+}
+
+/**
+ * @brief Bitwise XOR assignment operator.
+ *
+ * @param LHS The left handside byte.
+ * @param RHS The right handside byte.
+ *
+ * @returns Reference to LHS after bitwise XOR assignment operation.
+ */
+constexpr MYSTIC_FORCEINLINE byte& operator^=(byte& lhs, const byte& rhs) noexcept {
+    lhs = lhs ^ rhs;
+    return lhs;
+}
+
+/**
+ * @brief Bitwise left shift assignment operator.
+ *
+ * @param byte The byte value.
+ * @param shift The required shift.
+ *
+ * @returns Reference to byte after bitwise left shift assignment operation.
+ */
+constexpr MYSTIC_FORCEINLINE byte& operator<<=(byte& byte, int shift) noexcept {
+    byte = byte << shift;
+    return byte;
+}
+
+/**
+ * @brief Bitwise right shift assignment operator.
+ *
+ * @param byte The byte value.
+ * @param shift The required shift.
+ *
+ * @returns Reference to byte after bitwise right shift assignment operation.
+ */
+constexpr MYSTIC_FORCEINLINE byte& operator>>=(byte& byte, int shift) noexcept {
+    byte = byte >> shift;
+    return byte;
+}
+
+} // namespace mystic::types::internal
