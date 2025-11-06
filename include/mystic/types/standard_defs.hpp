@@ -39,7 +39,7 @@
  *    mystic::types::nullptr_t my_null_value = nullptr;
  *
  *    // Byte
- *    mystic::types::byte my_byte = 0x00000000;
+ *    mystic::types::byte my_byte = 0b00000000;
  *
  *    return 0;
  * }
