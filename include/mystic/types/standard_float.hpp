@@ -83,6 +83,84 @@ using float32_t
  */
 #if defined(MYSTIC_ALLOW_MACRO_USAGE) // Usage macro
 
+// --- Representation & Base ---
+
+// --- Radix ---
+
+/**
+ * @macro MYSTIC_FLT_RADIX
+ * @brief The base of the exponent representation.
+ */
+#define MYSTIC_FLT_RADIX FLT_RADIX
+
+// --- Mantissa --- 
+
+/**
+ * @macro MYSTIC_FLT_MANT_DIG
+ * @brief The number of base-FLT_RADIX digits in the mantissa (significand) of float.
+ */
+#define MYSTIC_FLT_MANT_DIG FLT_MANT_DIG
+
+/**
+ * @macro MYSTIC_DBL_MANT_DIG
+ * @brief The number of base-FLT_RADIX digits in the mantissa (significand) of double.
+ */
+#define MYSTIC_DBL_MANT_DIG DBL_MANT_DIG
+
+/**
+ * @macro MYSTIC_LDBL_MANT_DIG
+ * @brief The number of base-FLT_RADIX digits in the mantissa (significand) of long double.
+ */
+#define MYSTIC_LDBL_MANT_DIG LDBL_MANT_DIG
+
+// ------------------------------------------------------------------------------------
+
+// --- Range & Limits ---
+
+// --- Maximum Floating-Point Number ---
+
+/**
+ * @macro MYSTIC_FLT_MAX
+ * @brief The maximum finite representable floating-point number of float.
+ */
+#define MYSTIC_FLT_MAX FLT_MAX
+
+/**
+ * @macro MYSTIC_DBL_MAX
+ * @brief The maximum finite representable floating-point number of double.
+ */
+#define MYSTIC_DBL_MAX DBL_MAX
+
+/**
+ * @macro MYSTIC_LDBL_MAX
+ * @brief The maximum finite representable floating-point number of long double.
+ */
+#define MYSTIC_LDBL_MAX LDBL_MAX
+
+// --- Minimum Floating-Point Number ---
+
+/**
+ * @macro MYSTIC_FLT_MIN
+ * @brief The minimum representable normalized positive floating-point number of float.
+ */
+#define MYSTIC_FLT_MIN FLT_MIN
+
+/**
+ * @macro MYSTIC_DBL_MIN
+ * @brief The minimum representable normalized positive floating-point number of double.
+ */
+#define MYSTIC_DBL_MIN DBL_MIN
+
+/**
+ * @macro MYSTIC_LDBL_MIN
+ * @brief The minimum representable normalized positive floating-point number of long double.
+ */
+#define MYSTIC_LDBL_MIN LDBL_MIN
+
+// ------------------------------------------------------------------------------------
+
+// --- Precision & Digits ---
+
 // --- Digits of precision ---
 
 /**
