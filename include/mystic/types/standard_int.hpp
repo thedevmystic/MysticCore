@@ -518,5 +518,79 @@ using uintptr_t = ::std::uintptr_t;
  */
 #define MYSTIC_UINTMAX_C(value) UINTMAX_C(value)
 
+// --- Related Macros ---
+
+/**
+ * @macro MYSTIC_PTRDIFF_MIN
+ * @brief Minimum value ptrdiff_t can hold.
+ *
+ * @sa ptrdiff_t is defined in standard_def.hpp
+ */
+#define MYSTIC_PTRDIFF_MIN PTRDIFF_MIN
+
+/**
+ * @macro MYSTIC_PTRDIFF_MAX
+ * @brief Maximum value ptrdiff_t can hold.
+ *
+ * @sa ptrdiff_t is defined in standard_def.hpp
+ */
+#define MYSTIC_PTRDIFF_MAX PTRDIFF_MAX
+
+/**
+ * @macro MYSTIC_SIZE_MAX
+ * @brief Maximum value size_t can hold.
+ *
+ * @sa size_t is defined in standard_def.hpp
+ */
+#define MYSTIC_SIZE_MAX SIZE_MAX
+
+/**
+ * @macro MYSTIC_WCHAR_MIN
+ * @brief Minimum value wchar_t can hold.
+ *
+ * @sa wchar_t is defined in standard_wchar.hpp
+ */
+#define MYSTIC_WCHAR_MIN WCHAR_MIN
+
+/**
+ * @macro MYSTIC_WCHAR_MAX
+ * @brief Maximum value wchar_t can hold.
+ *
+ * @sa wchar_t is defined in standard_wchar.hpp
+ */
+#define MYSTIC_WCHAR_MAX WCHAR_MAX
+
+/**
+ * @macro MYSTIC_WINT_MIN
+ * @brief Minimum value wint_t can hold.
+ *
+ * @sa wint_t is defined in standard_wchar.hpp
+ */
+#define MYSTIC_WINT_MIN WINT_MIN
+
+/**
+ * @macro MYSTIC_WINT_MAX
+ * @brief Maximum value wint_t can hold.
+ *
+ * @sa wint_t is defined in standard_wchar.hpp
+ */
+#define MYSTIC_WINT_MAX WINT_MAX
+
+/**
+ * @macro MYSTIC_SIG_ATOMIC_MIN
+ * @brief Minimum value sig_atomic_t can hold.
+ *
+ * @sa sig_atomic_t is defined in standard_signal.hpp
+ */
+#define MYSTIC_SIG_ATOMIC_MIN SIG_ATOMIC_MIN
+
+/**
+ * @macro MYSTIC_SIG_ATOMIC_MAX
+ * @brief Maximum value sig_atomic_t can hold.
+ *
+ * @sa sig_atomic_t is defined in standard_signal.hpp
+ */
+#define MYSTIC_SIG_ATOMIC_MAX SIG_ATOMIC_MAX
+
 #endif // defined(MYSTIC_ALLOW_MACRO_USAGE)
 

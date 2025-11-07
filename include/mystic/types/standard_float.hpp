@@ -22,9 +22,10 @@
  * This header defines many macros related to floating point numbers. It wraps cfloat header file.
  *
  * This header defines,
- * 1. Float realted macros prefixed with `MYSTIC_FLT_*`.
- * 2. Double realted macros prefixed with `MYSTIC_DBL_*`.
- * 3. Long double realted macros prefixed with `MYSTIC_LDBL_*`.
+ * 1. Fixed width float types.
+ * 2. Float realted macros prefixed with `MYSTIC_FLT_*`.
+ * 3. Double realted macros prefixed with `MYSTIC_DBL_*`.
+ * 4. Long double realted macros prefixed with `MYSTIC_LDBL_*`.
  
  * @code {.cpp}
  * // Example
@@ -33,14 +34,14 @@
  *
  * int main() {
  *     // Epsilon
- *     float float_epsilon = MYSTIC_FLT_EPSILON;
- *     double double_epsilon = MYSTIC_DBL_EPSILON;
- *     long double ldouble_epsilon = MYSTIC_LDBL_EPSILON;
+ *     mystic::types::float32_t float_epsilon = MYSTIC_FLT_EPSILON;
+ *     mystic::types::float64_t double_epsilon = MYSTIC_DBL_EPSILON;
+ *     mystic::types::float128_t ldouble_epsilon = MYSTIC_LDBL_EPSILON;
  *
  *     // Radix
- *     float float_radix = MYSTIC_FLT_RADIX;
- *     double double_radix = MYSTIC_DBL_RADIX;
- *     long double ldouble_radix = MYSTIC_LDBL_RADIX;
+ *     mystic::types::float32_t float_radix = MYSTIC_FLT_RADIX;
+ *     mystic::types::float64_t double_radix = MYSTIC_DBL_RADIX;
+ *     mystic::types::float128_t double ldouble_radix = MYSTIC_LDBL_RADIX;
  *     
  *     // ... other macros 
  *     
@@ -57,6 +58,24 @@
 #pragma once
 
 #include <cfloat>
+
+#include "mystic/types/internal/fixed_width_floats.hpp"
+
+/**
+ * @namespace mystic::types
+ * @ingroup Types
+ * @brief Basic and high level data types.
+ *
+ * This namespace contains all data types from low level
+ * to high level.
+ */
+namespace mystic::types {
+
+/**
+ * @brief Fixed width floats.
+ */
+using float32_t
+} // namespace mystic::types
 
 /**
  * @brief if user opted in for macros, then alias standard library
