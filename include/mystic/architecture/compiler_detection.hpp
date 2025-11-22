@@ -55,8 +55,6 @@
  */
 #pragma once
 
-#include <string>
-
 #include "mystic/utility/stringify.hpp"
 
 /* =============================================
@@ -436,47 +434,59 @@
 
 
 /**
- * @namespace mystic::architecture::compiler
- * @brief Runtime compiler detection logic.
- *
- * Contains runtime logic for compiler detection and checking.
+ * @namespace mystic
+ * @brief Top level namespace.
  */
-namespace mystic::architecture::compiler {
+namespace mystic {
+
+/**
+ * @namespace mystic::architecture
+ * @brief Contains architecture-specific runtime code.
+ */
+namespace architecture {
+
+/**
+ * @namespace mystic::architecture::compiler
+ * @brief Contains compiler-specific runtime code.
+ */
+namespace compiler {
 
 /**
  * @brief Returns compiler name in runtime.
  */
-constexpr inline std::string GetCompilerName() {
+constexpr inline const char* GetCompilerName() {
     return MYSTIC_COMPILER_NAME;
 }
 
 /**
  * @brief Returns compiler version in runtime.
  */
-constexpr inline std::string GetCompilerVersion() {
+constexpr inline const char* GetCompilerVersion() {
     return MYSTIC_COMPILER_VERSION_STR;
 }
 
 /**
  * @brief Returns compiler major version in runtime.
  */
-constexpr inline std::string GetCompilerVersionMajor() {
+constexpr inline const char* GetCompilerVersionMajor() {
     return MYSTIC_COMPILER_VERSION_MAJOR_STR;
 }
 
 /**
  * @brief Returns compiler minor version in runtime.
  */
-constexpr inline std::string GetCompilerVersionMinor() {
+constexpr inline const char* GetCompilerVersionMinor() {
     return MYSTIC_COMPILER_VERSION_MINOR_STR;
 }
 
 /**
  * @brief Returns compiler patch version in runtime.
  */
-constexpr inline std::string GetCompilerVersionPatch() {
+constexpr inline const char* GetCompilerVersionPatch() {
     return MYSTIC_COMPILER_VERSION_PATCH_STR;
 }
 
-} // namespace mystic::architecture::compiler
+} // namespace compiler
+} // namespace architecture
+} // namespace mystic
 
