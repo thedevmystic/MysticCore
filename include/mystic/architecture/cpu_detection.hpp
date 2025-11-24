@@ -96,7 +96,7 @@
 
 /**
  * @macro MYSTIC_ARCH_CPU
- * @brief Tag for cpu CPU identification.
+ * @brief Tag for CPU identification.
  */
 #if defined(__x86_64__) || defined(__amd64__) || defined(_M_X64) /* using x86-64 */
 /**
