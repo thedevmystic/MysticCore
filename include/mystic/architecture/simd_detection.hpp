@@ -104,37 +104,37 @@
 /**
  * @brief Set simd tag to AVX512.
  */
-#define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_AVX512
+# define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_AVX512
 
 #elif defined(__AVX2__) /* using AVX2 */
 /**
  * @brief Set simd tag to AVX2.
  */
-#define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_AVX2
+# define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_AVX2
 
 #elif defined(__ARM_FEATURE_SVE2) && defined(__ARM_FEATURE_SME) /* using SVE2 */
 /**
  * @brief Set simd tag to SVE2.
  */
-#define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_SVE2
+# define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_SVE2
 
 #elif defined(__ARM_FEATURE_SVE) /* using SVE */
 /**
  * @brief Set simd tag to SVE.
  */
-#define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_SVE
+# define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_SVE
 
 #elif defined(__ARM_NEON) /* using NEON */
 /**
  * @brief Set simd tag to NEON.
  */
-#define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_NEON
+# define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_NEON
 
 #else /* if simd is unknown */
 /**
  * @brief Set simd tag to UNKNOWN.
  */
-#define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_UNKNOWN
+# define MYSTIC_ARCH_SIMD MYSTIC_ARCH_SIMD_UNKNOWN
 
 #endif // defined(__AVX512__)
 

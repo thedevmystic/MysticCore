@@ -77,13 +77,13 @@
 /**
  * @brief Set toolchain tag to GPU.
  */
-#define MYSTIC_ARCH_TOOLCHAIN MYSTIC_ARCH_TOOLCHAIN_GPU
+# define MYSTIC_ARCH_TOOLCHAIN MYSTIC_ARCH_TOOLCHAIN_GPU
 
 #else /* Default to HOST */
 /**
  * @brief Set toolchain to HOST.
  */
-#define MYSTIC_ARCH_TOOLCHAIN MYSTIC_ARCH_TOOLCHAIN_HOST
+# define MYSTIC_ARCH_TOOLCHAIN MYSTIC_ARCH_TOOLCHAIN_HOST
 
 #endif
 
