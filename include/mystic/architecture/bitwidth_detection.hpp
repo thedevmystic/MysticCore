@@ -28,7 +28,7 @@
  *
  * @code {.cpp}
  * // Example
- * #include "mystic/architecture/os_detection.hpp"
+ * #include "mystic/architecture/bitwidth_detection.hpp"
  * 
  * #if (MYSTIC_ARCH_BITWIDTH == MYSTIC_ARCH_BITWIDTH_64)
  * // 64 bit-specific code
