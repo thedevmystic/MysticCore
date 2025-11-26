@@ -27,3 +27,13 @@
 #pragma once
 
 #include "mystic/architecture/bitwidth_detection.hpp"
+#include "mystic/architecture/build_type_detection.hpp"
+#include "mystic/architecture/compiler_detection.hpp"
+#include "mystic/architecture/cpu_detection.hpp"
+#include "mystic/architecture/endianness_detection.hpp"
+#include "mystic/architecture/gpu_detection.hpp"
+#include "mystic/architecture/os_detection.hpp"
+#include "mystic/architecture/simd_detection.hpp"
+#include "mystic/architecture/standard_detection.hpp"
+#include "mystic/architecture/toolchain_detection.hpp"
+
