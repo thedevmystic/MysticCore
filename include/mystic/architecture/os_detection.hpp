@@ -54,7 +54,7 @@
 #pragma once
 
 /* =============================================
-    os Tags
+    OS Tags
    --------------------------------------------- */
 
 /**
@@ -197,7 +197,7 @@ namespace os {
 /**
  * @brief Returns OS name in runtime.
  */
-constexpr inline const char* GetOSName() {
+constexpr inline const char* get_os_name() {
     return MYSTIC_ARCH_OS_NAME;
 }
 
