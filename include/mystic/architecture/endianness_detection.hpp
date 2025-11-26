@@ -106,7 +106,7 @@
 /**
  * @brief Set Endiannes tag to unknown.
  */
-# define MYSTIC_ARCH_ENDIANNESS MYSTIC_ARCH_ENDIANNESS_BIG
+# define MYSTIC_ARCH_ENDIANNESS MYSTIC_ARCH_ENDIANNESS_UNKNOWN
 
 #endif
 
@@ -180,7 +180,7 @@ namespace endianness {
 /**
  * @brief Returns ENDIANNESS name in runtime.
  */
-constexpr inline const char* GetEndiannessName() {
+constexpr inline const char* get_endianness_name() {
     return MYSTIC_ARCH_ENDIANNESS_NAME;
 }
 
