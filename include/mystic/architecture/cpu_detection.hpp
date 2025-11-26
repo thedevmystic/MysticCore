@@ -212,7 +212,7 @@ namespace cpu {
 /**
  * @brief Returns CPU name in runtime.
  */
-constexpr inline const char* GetCPUName() {
+constexpr inline const char* get_cpu_name() {
     return MYSTIC_ARCH_CPU_NAME;
 }
 
