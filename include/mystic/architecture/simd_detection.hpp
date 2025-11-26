@@ -227,7 +227,7 @@ namespace simd {
 /**
  * @brief Returns simd name in runtime.
  */
-constexpr inline const char* GetSIMDName() {
+constexpr inline const char* get_simd_name() {
     return MYSTIC_ARCH_SIMD_NAME;
 }
 
