@@ -38,13 +38,14 @@
 #pragma once
 
 #include "mystic/architecture/compiler_detection.hpp"
+#include "mystic/architecture/standard_detection.hpp"
 
 /**
  * @macro MYSTIC_NODISCARD_NO_MSG
- * @brief Macro to no inline a function without msg.
+ * @brief Macro to no discard a function without msg.
  *
  * @macro MYSTIC_NODISCARD_WITH_MSG(msg)
- * @brief Macro to no inline a function with msg.
+ * @brief Macro to no discard a function with msg.
  */
 #if (MYSTIC_ARCH_STANDARD >= MYSTIC_ARCH_STANDARD_CPP20)
 /**
