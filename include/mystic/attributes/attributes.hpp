@@ -36,5 +36,6 @@
 #include "mystic/attributes/nodiscard.hpp"
 #include "mystic/attributes/noinline.hpp"
 #include "mystic/attributes/noreturn.hpp"
+#include "mystic/attributes/pure.hpp"
 #include "mystic/attributes/unreachable.hpp"
 
