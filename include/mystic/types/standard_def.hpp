@@ -55,8 +55,6 @@
 
 #include <cstddef>
 
-#include "mystic/types/internal/byte_internal.hpp"
-
 /**
  * @namespace mystic
  * @brief Top-level namespace.
@@ -80,11 +78,7 @@ using size_t      = ::std::size_t;
 using ptrdiff_t   = ::std::ptrdiff_t;
 using max_align_t = ::std::max_align_t;
 using nullptr_t   = ::std::nullptr_t;
-
-/**
- * @brief Alias byte to internal byte impl.
- */
-using byte = ::mystic::types::internal::byte;
+using byte        = ::std::byte;
 
 } // namespace types
 } // namespace mystic
