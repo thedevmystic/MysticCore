@@ -30,8 +30,13 @@
  */
 #pragma once
 
+#include "mystic/attributes/forceinline.hpp"
+#include "mystic/attributes/nodiscard.hpp"
+#include "mystic/attributes/unreachable.hpp"
+#include "mystic/containers/string.hpp"
 #include "mystic/macros/framework_api.hpp"
 #include "mystic/types/standard_int.hpp"
+#include "mystic/utility/string_utils.hpp"
 
 /**
  * @namespace mystic
@@ -160,6 +165,111 @@ enum class MYSTIC_FRAMEWORK_API StatusCode :
     DATA_LOSS = 0x000F,
 
 }; // enum class StatusCode
+
+/**
+ * @brief Function to convert StatusCode to string.
+ * This function uses direct lookup up to convert the given
+ * StatusCode to string.
+ *
+ * @param code The given StatusCode.
+ *
+ * @returns The corresponding string.
+ */
+MYSTIC_NODISCARD MYSTIC_FORCEINLINE
+::mystic::string to_string(const StatusCode& code) noexcept {
+    switch(code) {
+        case StatusCode::OK:
+            return "OK";
+        case StatusCode::CANCELLED:
+            return "CANCELLED";
+        case StatusCode::INVALID_ARGUMENT:
+            return "INVALID ARGUMENT";
+        case StatusCode::NOT_FOUND:
+            return "NOT FOUND";
+        case StatusCode::ALREADY_EXISTS:
+            return "ALREADY EXISTS";
+        case StatusCode::PERMISSION_DENIED:
+            return "PERMISSION DENIED";
+        case StatusCode::UNAUTHENTICATED:
+            return "UNAUTHENTICATED";
+        case StatusCode::OUT_OF_RANGE:
+            return "OUT OF RANGE";
+        case StatusCode::DEADLINE_EXCEEDED:
+            return "DEADLINE EXCEEDED";
+        case StatusCode::RESOURCE_EXHAUSTED:
+            return "RESOURCE EXHAUSTED";
+        case StatusCode::FAILED_PRECONDITION:
+            return "FAILED PRECONDITION";
+        case StatusCode::ABORT:
+            return "ABORT";
+        case StatusCode::UNIMPLEMENTED:
+            return "UNIMPLEMENTED";
+        case StatusCode::INTERNAL:
+            return "INTERNAL";
+        case StatusCode::UNAVAILABLE:
+            return "UNAVAILABLE";
+        case StatusCode::DATA_LOSS:
+            return "DATA LOSS";
+        default:
+            ::mystic::unreachable();
+    }
+}
+
+/**
+ * @brief Function to convert string to StatusCode.
+ *
+ * This function uses direct lookup up to convert the given
+ * string to StatusCode.
+ *
+ * @param str The given string.
+ *
+ * @returns The corresponding StatusCode.
+ *
+ * @note
+ * When unknown string is given, it defaults to `StatusCode::OK`.
+ */
+MYSTIC_NODISCARD MYSTIC_FORCEINLINE
+StatusCode from_string(const ::mystic::string& str) noexcept {
+
+    // Convert to uppercase for case-agnostic comparision.
+    ::mystic::string str_upper = ::mystic::string_utils::to_uppercase(str);
+
+    if (str_upper == "OK") {
+        return StatusCode::OK;
+    } else if (str_upper == "CANCELLED") {
+        return StatusCode::CANCELLED;
+    } else if (str_upper == "INVALID ARGUMENT") {
+        return StatusCode::INVALID_ARGUMENT;
+    } else if (str_upper == "NOT FOUND") {
+        return StatusCode::NOT_FOUND;
+    } else if (str_upper == "ALREADY EXISTS") {
+        return StatusCode::ALREADY_EXISTS;
+    } else if (str_upper == "PERMISSION DENIED") {
+        return StatusCode::PERMISSION_DENIED;
+    } else if (str_upper == "UNAUTHENTICATED") {
+        return StatusCode::UNAUTHENTICATED;
+    } else if (str_upper == "OUT OF RANGE") {
+        return StatusCode::OUT_OF_RANGE;
+    } else if (str_upper == "DEADLINE EXCEEDED") {
+        return StatusCode::DEADLINE_EXCEEDED;
+    } else if (str_upper == "RESOURCE EXHAUSTED") {
+        return StatusCode::RESOURCE_EXHAUSTED;
+    } else if (str_upper == "FAILED PRECONDITION") {
+        return StatusCode::FAILED_PRECONDITION;
+    } else if (str_upper == "ABORT") {
+        return StatusCode::ABORT;
+    } else if (str_upper == "UNIMPLEMENTED") {
+        return StatusCode::UNIMPLEMENTED;
+    } else if (str_upper == "INTERNAL") {
+        return StatusCode::INTERNAL;
+    } else if (str_upper == "UNAVAILABLE") {
+        return StatusCode::UNAVAILABLE;
+    } else if (str_upper == "DATA LOSS") {
+        return StatusCode::DATA_LOSS;
+    } else {
+        return StatusCode::OK;
+    }
+}
 
 } // namespace status
 } // namespace mystic
