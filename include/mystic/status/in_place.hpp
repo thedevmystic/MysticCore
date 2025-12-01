@@ -60,13 +60,12 @@ namespace status {
 /**
  * @brief Struct for in_place tag.
  */
-MYSTIC_FRAMEWORK_API
-struct in_place_t {};
+struct MYSTIC_FRAMEWORK_API in_place_t {};
 
 /**
  * @brief in_place tag.
  */
-static constexpr in_place_t in_place{};
+constexpr inline in_place_t in_place{};
 
 } // namespace status
 } // namespace mystic
